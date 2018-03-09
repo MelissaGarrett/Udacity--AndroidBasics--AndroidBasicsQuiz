@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Android Basics Quiz</string>
+
+    <string name="question1">1)  What is the correct way to declare the primitive type that can only store \'true\' or \'false\'?</string>
+    <string name="question1_radio1">bool</string>
+    <string name="question1_radio2">boolean</string>
+
+    <string name="question2">2)  Which view is a text field that you can type into?</string>
+    <string name="question2_radio1">EditText</string>
+    <string name="question2_radio2">TextArea</string>
+    <string name="question2_radio3">TextView</string>
+
+    <string name="question3">3)  Which operator is used to check for equality?</string>
+
+    <string name="question4">4)  In your XML file, which attribute is correct to specify which method is called when a Button view is tapped?</string>
+    <string name="question4_radio1">buttonClick</string>
+    <string name="question4_radio2">onClick</string>
+
+    <string name="question5">5)  What is the keyword used to create/instantiate an object?</string>
+
+    <string name="question6">6)  Check all of the resources found in the \'res\' folder of an app.</string>
+    <string name="question6_check1">drawable</string>
+    <string name="question6_check2">layout</string>
+    <string name="question6_check3">manifests</string>
+    <string name="question6_check4">values</string>
+
+</resources>
