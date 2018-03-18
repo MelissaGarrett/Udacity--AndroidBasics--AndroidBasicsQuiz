@@ -1,5 +1,6 @@
 package com.example.android.androidbasicsquiz;
 
+import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,10 +14,30 @@ public class MainActivity extends AppCompatActivity {
     int studentScore = 0;
     static final int TOTAL_NUM_OF_QUESTIONS = 6;
 
+    RadioButton question1RadioButton;
+    RadioButton question2RadioButton;
+    EditText question3EditText;
+    RadioButton question4RadioButton;
+    EditText question5EditText;
+    CheckBox drawableBox;
+    CheckBox layoutBox;
+    CheckBox manifestsBox;
+    CheckBox valuesBox;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        question1RadioButton = findViewById(R.id.boolean_radio_button);
+        question2RadioButton = findViewById(R.id.edit_text_radio_button);
+        question3EditText = findViewById(R.id.question_3_edit_text);
+        question4RadioButton = findViewById(R.id.on_click_radio_button);
+        question5EditText = findViewById(R.id.question_5_edit_text);
+        drawableBox = findViewById(R.id.drawable_checkbox);
+        layoutBox = findViewById(R.id.layout_checkbox);
+        manifestsBox = findViewById(R.id.manifests_checkbox);
+        valuesBox = findViewById(R.id.values_checkbox);
     }
 
     public void submitAnswersButtonTapped(View view) {
@@ -31,27 +52,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void checkQuestionOne() {
-        RadioButton booleanButton = (RadioButton) findViewById(R.id.boolean_radio_button);
-
-        if (booleanButton.isChecked()) {
+        if (question1RadioButton.isChecked()) {
             studentScore += 1;
         }
     }
 
     private void checkQuestionTwo() {
-        RadioButton editTextButton = (RadioButton) findViewById(R.id.edit_text_radio_button);
-        RadioButton textAreaButton = (RadioButton) findViewById(R.id.text_area_radio_button);
-        RadioButton textViewButton = (RadioButton) findViewById(R.id.text_view_radio_button);
-
-        if (editTextButton.isChecked()) {
+        if (question2RadioButton.isChecked()) {
             studentScore += 1;
         }
     }
 
     private void checkQuestionThree() {
-        EditText editText = (EditText) findViewById(R.id.question_3_edit_text);
-
-        String equalityAnswer = editText.getText().toString();
+        String equalityAnswer = question3EditText.getText().toString();
 
         if (equalityAnswer.trim().equals("==")) {
             studentScore += 1;
@@ -59,17 +72,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void checkQuestionFour() {
-        RadioButton onClickButton = (RadioButton) findViewById(R.id.on_click_radio_button);
-
-        if (onClickButton.isChecked()) {
+        if (question4RadioButton.isChecked()) {
             studentScore += 1;
         }
     }
 
     private void checkQuestionFive() {
-        EditText editText = (EditText) findViewById(R.id.question_5_edit_text);
-
-        String instantiateAnswer = editText.getText().toString();
+        String instantiateAnswer = question5EditText.getText().toString();
 
         if (instantiateAnswer.trim().toLowerCase().equals("new")) {
             studentScore += 1;
@@ -77,11 +86,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void checkQuestionSix() {
-        CheckBox drawableBox = (CheckBox) findViewById(R.id.drawable_checkbox);
-        CheckBox layoutBox = (CheckBox) findViewById(R.id.layout_checkbox);
-        CheckBox manifestsBox = (CheckBox) findViewById(R.id.manifests_checkbox);
-        CheckBox valuesBox = (CheckBox) findViewById(R.id.values_checkbox);
-
         if (drawableBox.isChecked() && layoutBox.isChecked() &&
                 !manifestsBox.isChecked() && valuesBox.isChecked()) {
             studentScore += 1;
@@ -89,12 +93,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void displayStudentScore() {
+        Resources res = getResources();
+        String msg = "";
+
         if (studentScore == TOTAL_NUM_OF_QUESTIONS) {
-            Toast.makeText(this, "Congratulations for getting all the questions correct!", Toast.LENGTH_SHORT).show();
+            msg = res.getString(R.string.toast_all_correct);
+            Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
         } else if (studentScore == 0) {
-            Toast.makeText(this, "Sorry, but you didn't get any question correct.", Toast.LENGTH_SHORT).show();
+            msg = res.getString(R.string.toast_none_correct);
+            Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
         } else {
-            String msg = "You got " + studentScore + " out of " + TOTAL_NUM_OF_QUESTIONS + " questions right.";
+            msg = "You got " + studentScore + " out of " + TOTAL_NUM_OF_QUESTIONS + " questions right.";
             Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
         }
 

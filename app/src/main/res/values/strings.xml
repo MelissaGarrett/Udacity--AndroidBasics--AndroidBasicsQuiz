@@ -24,4 +24,9 @@
     <string name="question6_check3">manifests</string>
     <string name="question6_check4">values</string>
 
+    <string name="button_text">Submit Answers</string>
+
+    <string name="toast_all_correct">Congratulations for getting all the questions correct.</string>
+    <string name="toast_none_correct">Sorry, but you didn\'t get any question correct.</string>
+
 </resources>

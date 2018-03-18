@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="question1_margin_top">24dp</dimen>
+    <dimen name="question2_margin_top">32dp</dimen>
+    <dimen name="question3_margin_top">32dp</dimen>
+    <dimen name="question4_margin_top">32dp</dimen>
+    <dimen name="question5_margin_top">32dp</dimen>
+    <dimen name="question6_margin_top">32dp</dimen>
+
+    <dimen name="questions_margin_left">16dp</dimen>
+    <dimen name="questions_margin_right">16dp</dimen>
+    <dimen name="questions_text_size">24sp</dimen>
+
+    <dimen name="radio_button_margin_top">8dp</dimen>
+    <dimen name="radio_button_margin_left">32dp</dimen>
+    <dimen name="radio_button_text_size">16sp</dimen>
+
+    <dimen name="edit_text_margin_top">16dp</dimen>
+    <dimen name="edit_text_margin_left">32dp</dimen>
+    <dimen name="edit_text_margin_right">32dp</dimen>
+    <dimen name="edit_text_text_size">16sp</dimen>
+
+    <dimen name="check_box_margin_top">8dp</dimen>
+    <dimen name="check_box_margin_left">32dp</dimen>
+    <dimen name="check_box_text_size">16sp</dimen>
+
+    <dimen name="button_margin_top">40dp</dimen>
+    <dimen name="button_margin_bottom">16dp</dimen>
+    <dimen name="button_padding">10dp</dimen>
+
+</resources>
